@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roll Rescue — Privacy Policy</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         max-width: 44rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; color: #171219;
+         background: #FAF7F9; }
+  @media (prefers-color-scheme: dark) { body { color: #F6EFF3; background: #120D14; } a { color: #FF6FA8; } }
+  h1 { font-size: 1.9rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.25rem; margin-top: 2rem; }
+  .sub { color: #6B5E66; margin-top: 0; }
+  a { color: #B5106A; }
+  ul { padding-left: 1.25rem; }
+  li { margin: .35rem 0; }
+  .note { border-left: 3px solid #B5106A; padding: .5rem 0 .5rem 1rem; margin: 1.5rem 0;
+          background: rgba(181,16,106,.06); border-radius: 0 6px 6px 0; }
+</style>
+</head>
+<body>
+<h1>Roll Rescue — Privacy Policy</h1>
+<p class="sub">Last updated: 1 September 2026</p>
+
+<p>Roll Rescue takes a <code>.zip</code> archive of photos and videos that you already have
+on your iPhone and puts the media inside it into your photo library, with the original
+capture dates intact. This policy explains, in plain language, exactly what the app does
+and does not do with your information. The short version: <strong>Roll Rescue collects
+nothing about you, and it contains no networking code of its own.</strong></p>
+
+<div class="note">
+  <strong>No accounts, no servers, no tracking.</strong> Roll Rescue has no sign-in, no
+  user account, and no server of its own. It includes no analytics, no crash reporter, no
+  advertising and no third-party tracking software. We cannot see your archive, your
+  photos, or anything the app did with them, because the app has no way to send them
+  anywhere.
+</div>
+
+<h2>Your photo library: add-only, never read</h2>
+<p>Roll Rescue asks iOS for <strong>add-only</strong> access to your photo library — the
+permission that lets an app put items <em>in</em> and nothing more. That is the only photo
+permission it requests, and the only photo permission described in the app
+(<code>NSPhotoLibraryAddUsageDescription</code>).</p>
+<p>Add-only access means the app <strong>cannot read, browse, search, or count the photos
+and videos you already have</strong>. It does not know what is in your library. It cannot
+tell you whether something is already there, and it never looks.</p>
+
+<h2>Your archive</h2>
+<p>You choose the archive yourself, from the system file picker. Roll Rescue reads it,
+unpacks one item at a time into its own temporary storage, and hands that item to Photos —
+which takes the file, leaving nothing behind. Your media is never copied anywhere else and
+never leaves your device.</p>
+<p>If the archive you pick lives in iCloud Drive and is not yet downloaded to your iPhone,
+the app asks iOS to download it. That transfer happens between your device and Apple's
+iCloud, using your own iCloud account and your own file. We are not part of it and cannot
+see it.</p>
+
+<h2>What the app stores on your device</h2>
+<p>All of this is stored inside the app on your iPhone, and none of it is transmitted
+anywhere:</p>
+<ul>
+  <li><strong>An import log.</strong> One line per item the app considered, recording that
+      item's path inside the archive, its size and checksum, the capture date the app
+      recovered and where that date came from, and what happened (imported, skipped,
+      already done, failed). This is what lets an interrupted run resume where it stopped,
+      lets a second run avoid importing the same item twice, and produces the summary you
+      see at the end.</li>
+  <li><strong>A bookmark to the archive you picked</strong>, so the app can offer to resume
+      the same archive next time you open it.</li>
+  <li><strong>A few small settings</strong>: whether a run stopped part-way, whether the
+      unlock offer is still standing, and whether the app has already asked you to rate
+      it.</li>
+</ul>
+<p>Deleting the app removes all of it. You can also clear the archive bookmark simply by
+picking a different archive.</p>
+
+<h2>What we collect</h2>
+<p>Nothing. Specifically, Roll Rescue does <strong>not</strong>:</p>
+<ul>
+  <li>require or offer any account, email, or sign-in;</li>
+  <li>contain any analytics, advertising, attribution or crash-reporting software;</li>
+  <li>ask for permission to track you across apps or websites (there is no App Tracking
+      Transparency prompt, because there is nothing to track);</li>
+  <li>access your location, contacts, camera, microphone, health data, or the photos
+      already in your library;</li>
+  <li>connect to, log in to, or communicate with any online service — including the service
+      your archive may have come from, and including any third-party AI service.</li>
+</ul>
+<p>The app's <code>PrivacyInfo.xcprivacy</code> manifest declares no tracking, no tracking
+domains and no collected data types, and its App Store privacy label is <strong>Data Not
+Collected</strong>. That matches this page exactly.</p>
+
+<h2>Notifications</h2>
+<p>If your archive has to download from iCloud first, the app can offer to notify you when
+it is ready. If you accept, that notification is scheduled by iOS <strong>on your
+device</strong>. There is no push server, no device token, and nothing is registered with
+us or with anyone else. Declining costs you nothing but the reminder.</p>
+
+<h2>Encryption</h2>
+<p>Roll Rescue does not encrypt or decrypt anything, and it cannot open a
+password-protected archive. It computes SHA-256 hashes purely as local index keys for the
+import log described above. Its export-compliance declaration is
+<code>ITSAppUsesNonExemptEncryption = false</code>.</p>
+
+<h2>Purchases</h2>
+<p>Roll Rescue offers a single one-time in-app purchase (US$9.99) to unlock the full
+import. There is no subscription and no recurring charge. Payment is handled entirely by
+Apple through the App Store — we never see or store your payment details, and we receive no
+information that identifies you. Apple's handling of that transaction is governed by
+<a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</p>
+
+<h2>Children</h2>
+<p>Roll Rescue is a general-purpose file utility and is not directed at children.</p>
+
+<h2>Changes to this policy</h2>
+<p>If this policy ever changes, the updated version will be posted on this page with a new
+"Last updated" date.</p>
+
+<h2>Contact</h2>
+<p>Questions about privacy? Email <a href="mailto:rollrescue@quantum-solutions.hr">rollrescue@quantum-solutions.hr</a>.</p>
+
+<p class="sub"><a href="support.html">Support &amp; help →</a></p>
+</body>
+</html>

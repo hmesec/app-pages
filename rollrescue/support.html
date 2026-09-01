@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roll Rescue — Support</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         max-width: 44rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; color: #171219;
+         background: #FAF7F9; }
+  @media (prefers-color-scheme: dark) { body { color: #F6EFF3; background: #120D14; } a { color: #FF6FA8; } }
+  h1 { font-size: 1.9rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.25rem; margin-top: 2rem; }
+  .sub { color: #6B5E66; margin-top: 0; }
+  a { color: #B5106A; }
+  ul { padding-left: 1.25rem; }
+  li { margin: .35rem 0; }
+  dt { font-weight: 600; margin-top: 1rem; }
+  dd { margin: .25rem 0 0; }
+  .note { border-left: 3px solid #B5106A; padding: .5rem 0 .5rem 1rem; margin: 1.5rem 0;
+          background: rgba(181,16,106,.06); border-radius: 0 6px 6px 0; }
+</style>
+</head>
+<body>
+<h1>Roll Rescue — Support</h1>
+<p class="sub">Last updated: 1 September 2026</p>
+
+<p>Roll Rescue does one job: it takes a <code>.zip</code> archive of your own photos and
+videos that is already on your iPhone, and puts the media inside it into your photo
+library — <strong>with the original capture dates intact</strong>, the right way up, once,
+and resumably. One screen, one job, entirely on your device.</p>
+
+<div class="note">
+  <strong>It only adds. It never reads your library.</strong> Roll Rescue asks for
+  <em>add-only</em> photo access, which is the permission to put items in and nothing
+  more. It cannot see, search or count the photos you already have, and it never deletes
+  anything.
+</div>
+
+<h2>How to use it</h2>
+<ul>
+  <li><strong>Get the archive onto your phone.</strong> Roll Rescue starts from a
+      <code>.zip</code> file you already have — in Files, in iCloud Drive, or downloaded
+      from wherever you exported it. The app does not fetch it and never signs in
+      anywhere.</li>
+  <li><strong>Pick it.</strong> Tap to choose the archive from the system file picker. If
+      it is stored in iCloud and not yet on the phone, the app asks iOS to download it
+      first and shows real byte progress while that happens.</li>
+  <li><strong>Look at the scan.</strong> Before importing anything, the app reads the
+      archive's index and tells you how many items it found and how big they are — plus
+      the years they span, when the archive actually carries dates it can trust.</li>
+  <li><strong>Watch the first 25 come back.</strong> The app imports the 25 oldest datable
+      items into your photo library, free, and shows you their thumbnails. Open Photos and
+      check the dates yourself before you decide anything.</li>
+  <li><strong>Rescue the rest.</strong> Unlocking imports everything else in the archive.
+      You can leave and come back — an interrupted run resumes where it stopped instead of
+      starting over.</li>
+</ul>
+
+<h2>Purchase &amp; unlocking</h2>
+<dl>
+  <dt>What does it cost?</dt>
+  <dd>A single one-time purchase of US$9.99 unlocks the full import. There is
+      <strong>no subscription</strong>, no recurring charge, and no free trial to
+      forget to cancel.</dd>
+
+  <dt>What do I get before I pay?</dt>
+  <dd>The scan report, and the first 25 items actually imported into your library and
+      kept. They stay there whether or not you buy.</dd>
+
+  <dt>Where is the purchase?</dt>
+  <dd>It appears after the first 25 items are in your library and you tap to continue.
+      That is the only purchase in the app.</dd>
+
+  <dt>I bought it on another device / reinstalled and it's locked.</dt>
+  <dd>Open the unlock sheet and tap <strong>Restore purchase</strong>. Your one-time
+      unlock is tied to your Apple ID and restores for free.</dd>
+</dl>
+
+<h2>About the dates</h2>
+<dl>
+  <dt>Where does each date come from?</dt>
+  <dd>The file's own EXIF or QuickTime capture metadata first — that is the most reliable
+      source, so the app hands the file to Photos and lets Photos read it. If the file
+      carries no capture metadata, the app falls back to the archive's own index (converted
+      from UTC), and then to the archive entry's modification time.</dd>
+
+  <dt>Some items came in without a date. Why?</dt>
+  <dd>Because nothing in the archive said when they were taken. Roll Rescue will
+      <strong>not</strong> stamp them with today's date to make the import look tidy — it
+      imports them anyway and lists them in the report by filename, so you can fix the ones
+      you care about in Photos.</dd>
+
+  <dt>The scan didn't show a year range.</dt>
+  <dd>That means the archive's only usable dates were the file timestamps the export tool
+      wrote on the day it was created, which say nothing about when the photos were taken.
+      The app shows no range rather than an invented one.</dd>
+</dl>
+
+<h2>Items the app skips, and why</h2>
+<ul>
+  <li><strong>A damaged entry.</strong> Every item is checksummed on the way out of the
+      archive. If the checksum disagrees, the item is reported rather than written — a
+      corrupt file in your library is worse than a known gap.</li>
+  <li><strong>A password-protected archive.</strong> Roll Rescue cannot open encrypted
+      entries and says so instead of failing silently. Re-export without a password.</li>
+  <li><strong>An unusual compression method.</strong> Standard zip archives work; a few
+      rarer methods (deflate64, bzip2, LZMA, zstd, XZ) are not decoded and are reported.</li>
+  <li><strong>A sticker or caption layer shipped as its own file.</strong> When an archive
+      stores an overlay separately from the picture it belongs to, the app burns it into
+      the picture rather than importing it as a stray image. If that ever fails, the
+      original media imports untouched and the report says so.</li>
+</ul>
+
+<h2>Space, time and interruptions</h2>
+<dl>
+  <dt>Do I need free space equal to the archive?</dt>
+  <dd>No. Items are unpacked one at a time and handed straight to Photos, so the extra
+      space needed at any moment is roughly one item. The app checks you have room before
+      it starts and tells you the numbers if you don't.</dd>
+
+  <dt>What happens if I close the app or it's interrupted?</dt>
+  <dd>Nothing is lost and nothing is done twice. The app keeps a private on-device log of
+      what it has already imported, so reopening offers to resume the same archive from
+      where it stopped.</dd>
+
+  <dt>Can I run it twice on the same archive?</dt>
+  <dd>Yes — items already imported are recognised and skipped rather than duplicated.</dd>
+</dl>
+
+<h2>Your data &amp; privacy</h2>
+<p>Roll Rescue has no accounts, no servers, and no analytics or tracking, and it contains
+no networking code of its own. Your archive and your media never leave your device. The
+App Store privacy label is <strong>Data Not Collected</strong>. Full details are in the
+<a href="privacy.html">Privacy Policy</a>.</p>
+
+<h2>Common questions</h2>
+<dl>
+  <dt>Does it work offline?</dt>
+  <dd>Yes — apart from Apple's own App Store purchase, and iOS downloading your archive if
+      you keep it in iCloud Drive rather than on the phone.</dd>
+
+  <dt>Will it delete or change my archive?</dt>
+  <dd>No. The archive is only read.</dd>
+
+  <dt>Does it touch the photos I already have?</dt>
+  <dd>No. Add-only access makes that impossible — the app cannot read your library at
+      all.</dd>
+
+  <dt>Does it put everything in a named album?</dt>
+  <dd>No. Items go into your library with their own dates, so they land where they belong
+      in your timeline rather than in a pile at the end.</dd>
+</dl>
+
+<h2>Contact us</h2>
+<p>Need help, found a bug, or have a suggestion? Email
+<a href="mailto:rollrescue@quantum-solutions.hr">rollrescue@quantum-solutions.hr</a> and we'll get back to you.
+Telling us the archive's rough size and item count, and what the report screen said, gets
+you a useful answer fastest.</p>
+
+<p class="sub"><a href="privacy.html">← Privacy Policy</a></p>
+</body>
+</html>
